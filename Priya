@@ -1,0 +1,13 @@
+System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		
+		driver.get("https://www.actitime.com");
+	
+		WebElement ele = driver.findElement(By.id("username"));
+		ele.sendKeys("Pune");
+		driver.navigate().refresh();
+		ele.sendKeys("admin");
+	}
